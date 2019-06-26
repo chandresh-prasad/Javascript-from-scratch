@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script type="text/javascript">
+
+    var email;
+    var department;
+    //initialized global variable for code optimization
+
+    function getElement(){
+      email=document.getElementById("email");
+      department=document.getElementById("department");
+    }
+
+    function fnClear(){
+      // var email=document.getElementById("email");
+      if (email.value=="enter email") {
+        email.value="";
+        email.style.backgroundColor="#f1f1f1";
+      }
+    }
+
+    function fnValidate(){
+      // var email=document.getElementById("email");
+      if (email.value=="") {
+        alert("Email cannot be empty.");
+        email.value=("enter email");
+        email.style.backgroundColor="white";
+      }
+    }
+
+    function fnChangeColor(){
+      // var email=document.getElementById("email");
+      email.style.backgroundColor="#fff";
+    }
+
+    function fnDepartment(){
+      // var department=document.getElementById("department");
+      alert(department.selectedIndex);
+      alert(department.value);
+      alert(department.options[department.selectedIndex].text);
+    }
+
+    function fnIsValid(){
+      // var email=document.getElementById("email");
+      // var department=document.getElementById("department");
+
+      var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      if (reg.test(email.value)==false) {
+        alert("Invalid Email");
+        return false;
+      }
+      else if (department.selectedIndex==0) {
+        alert("kindly select department!");
+        return false;
+      }
+      else {
+        return confirm("Are you sure you want to submit?");
+      }
+    }
+
+  </script>
+</head>
+<body onload="getElement()">
+  <form onsubmit="return fnIsValid()">
+    Email: <input type="text" id="email" value="enter email" name="email" onfocus="fnClear()" onblur="fnValidate()" onchange="fnChangeColor()"></input> <br><br>
+
+    Department: <select type"dropdown" id="department" onchange="fnDepartment()">
+      <option value="0">Select Department</option>
+      <option value="100">Computer</option>
+      <option value="101">EXTC</option>
+      <option value="102">IT</option>
+      <option value="103">Mechanical</option>
+      <option value="104">Civil</option>
+    </select><br><br>
+
+    <input type="submit" name="submit" value="Submit">
+  </form>
+  </body>
+</html>

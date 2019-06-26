@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- sinle object:<br>
+  var obj={"RollNo":1,"Name":"Peter","Marks":75};<br>
+  Object Call:<br>
+  obj.RollNo <br><br>
+  <br>
+
+  LIst of Objects:<br>
+  var lstObj=[{"RollNo":1,"Name":"Sunny","Marks":75},
+              {"RollNo":2,"Name":"Jitesh","Marks":78},
+              {"RollNo":3,"Name":"Dinesh","Marks":75}]<br>
+  Object Call:<br>
+  lstObj[0].RollNo <br> -->
+
+  <script type="text/javascript">
+  // var obj={"RollNo":1,"Name":"Peter","Marks":75};
+  // document.write(obj.RollNo+ " " +obj.Name);
+  //
+  // var jsonString = JSON.stringify(obj);
+  // var javascriptObj=JSON.parse(jsonString);
+
+  function Result(valAvg){
+    if(valAvg>=35){
+      return "Pass";
+    }
+    else {
+      return "Failed";
+    }
+  }
+
+  var lstObj=[{"RollNo":1,"Name":"Sunny","M1":45,"M2":65},
+              {"RollNo":2,"Name":"Jitesh","M1":55,"M2":78},
+              {"RollNo":3,"Name":"Dinesh","M1":30,"M2":32},
+              {"RollNo":4,"Name":"Bhavesh","M1":68,"M2":75}];
+
+  // document.write(lstObj[2].Name);
+
+  document.write("<table border=1>");
+  document.write("<thead>");
+  document.write("<td>RollNO</td>");
+  document.write("<td>Name</td>");
+  document.write("<td>Avg</td>");
+  document.write("<td>Result</td>");
+  document.write("</thead>");
+
+  for (var i in lstObj) {
+    document.write("<tr>");
+    document.write("<td>"+lstObj[i].RollNo+"</td>");
+    document.write("<td>"+lstObj[i].Name+"</td>");
+    document.write("<td>"+(lstObj[i].M1+lstObj[i].M2)/2 +"</td>");
+    document.write("<td>"+Result((lstObj[i].M1+lstObj[i].M2)/2) +"</td>");
+    document.write("</tr>");
+  }
+
+  document.write("</table>");
+
+  </script>
+</body>
+</html>

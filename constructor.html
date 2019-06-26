@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function student(r,n,m1,m2){
+      this.RollNo=r;
+      this.Name=n;
+      this.M1=m1;
+      this.M2=m2;
+
+      this.result=function(valAvg){
+        if(valAvg>=35){
+          return "Pass";
+        }
+        else {
+          return "Fail";
+        }
+      };
+    }
+
+    var s=new student(1,"Sunny",45,65);
+
+    document.write(s.RollNo+"<br/>");
+    document.write(s.Name+"<br/>");
+    document.write((s.M1+s.M2)/2+"<br/>");
+    document.write(s.result((s.M1+s.M2)/2)+"<br/>");
+
+    var s2=new student(2,"Jitesh",5,7);
+
+    document.write(s2.RollNo+"<br/>");
+    document.write(s2.Name+"<br/>");
+    document.write((s2.M1+s2.M2)/2+"<br/>");
+    document.write(s2.result((s2.M1+s2.M2)/2)+"<br/>");
+
+    // var Obj={"RollNo":1,"Name":"Sunny","M1":45,"M2":65};
+  </script>
+</body>
+</html>

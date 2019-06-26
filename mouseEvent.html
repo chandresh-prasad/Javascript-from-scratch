@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script type="text/javascript">
+    function BlackMe(){
+      var btn=document.getElementById("btnClickMe");
+      btn.style.backgroundColor="black";
+      btn.style.color="white";
+    }
+    function RedMe(){
+      var btn=document.getElementById("btnClickMe");
+      btn.style.backgroundColor="red";
+      btn.style.color="white";
+    }
+    function ClickMe(){
+      alert("You clicked the button :)");
+    }
+  </script>
+</head>
+<body>
+  <marquee onmouseover="stop()" onmouseout="start()">Welcome to JavaScript Tutorial</marquee>
+
+  <input type="button" id="btnClickMe" value="ClickMe" onmouseover="BlackMe()" onmouseout="RedMe()" onclick="ClickMe()">
+</body>
+</html>

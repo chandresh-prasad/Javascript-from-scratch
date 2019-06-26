@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form onsubmit="return fnIsValid()">
+    Email: <input type="text" id="email" value="enter email" onfocus="fnClear()" onblur="fnValidate()" onchange="fnChangeColor()"></input> <br><br>
+
+    Department: <select type"dropdown" id="department" onchange="fnDepartment()">
+      <option value="0">Select Department</option>
+      <option value="100">Computer</option>
+      <option value="101">EXTC</option>
+      <option value="102">IT</option>
+      <option value="103">Mechanical</option>
+      <option value="104">Civil</option>
+    </select><br><br>
+
+    <input type="button" name="submit" value="Submit"/>
+  </form>
+</body>
+</html>

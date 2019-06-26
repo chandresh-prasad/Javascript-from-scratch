@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript">
+
+    function func(){
+      //alert when page successfully loaded
+      alert("Page is loaded :)");
+
+      //identifies browser
+      if (navigator.userAgent.indexOf("Chrome")!=-1) {
+        alert("Chrome");
+      }
+      else if (navigator.userAgent.indexOf("Firefox")!=-1) {
+        alert("Firefox hai baba");
+      }
+
+      //identifies if cookie is enabled or not
+      document.write(navigator.cookieEnabled);
+
+    }
+  </script>
+</head>
+<body onload="func()">
+
+</body>
+</html>
